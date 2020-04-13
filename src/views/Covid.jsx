@@ -45,7 +45,7 @@ const Dashboard = () => {
   const getData = async () => {
     try {
 
-      const res = await axios.get('http://covid19.th-stat.com/api/open/today');
+      const res = await axios.get('https://covid19.th-stat.com/api/open/today');
       console.log(res.data);
       setCovidData(res.data);
 
@@ -56,7 +56,7 @@ const Dashboard = () => {
   const getAllData = async () => {
     try {
 
-      const res = await axios.get('http://covid19.th-stat.com/api/open/timeline');
+      const res = await axios.get('https://covid19.th-stat.com/api/open/timeline');
       console.log(res.data);
       setCovidAllData(res.data);
 
