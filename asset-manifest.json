@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/covid19/static/css/main.f1e1bee9.chunk.css",
-    "main.js": "/covid19/static/js/main.1a8b9570.chunk.js",
-    "main.js.map": "/covid19/static/js/main.1a8b9570.chunk.js.map",
-    "runtime~main.js": "/covid19/static/js/runtime~main.60db82c8.js",
-    "runtime~main.js.map": "/covid19/static/js/runtime~main.60db82c8.js.map",
-    "static/css/2.367471c6.chunk.css": "/covid19/static/css/2.367471c6.chunk.css",
-    "static/js/2.4d3a76ab.chunk.js": "/covid19/static/js/2.4d3a76ab.chunk.js",
-    "static/js/2.4d3a76ab.chunk.js.map": "/covid19/static/js/2.4d3a76ab.chunk.js.map",
-    "index.html": "/covid19/index.html",
-    "precache-manifest.c50f8fb3076a1e692902e9c910c9a68d.js": "/covid19/precache-manifest.c50f8fb3076a1e692902e9c910c9a68d.js",
-    "service-worker.js": "/covid19/service-worker.js",
-    "static/css/2.367471c6.chunk.css.map": "/covid19/static/css/2.367471c6.chunk.css.map",
-    "static/css/main.f1e1bee9.chunk.css.map": "/covid19/static/css/main.f1e1bee9.chunk.css.map",
-    "static/media/logo.svg": "/covid19/static/media/logo.5d5d9eef.svg",
-    "static/media/paper-dashboard.scss?v=1.1.0": "/covid19/static/media/nucleo-icons.f32ed5ad.eot"
+    "main.css": "/static/css/main.6b48d409.chunk.css",
+    "main.js": "/static/js/main.1a8b9570.chunk.js",
+    "main.js.map": "/static/js/main.1a8b9570.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.367471c6.chunk.css": "/static/css/2.367471c6.chunk.css",
+    "static/js/2.3ff20b71.chunk.js": "/static/js/2.3ff20b71.chunk.js",
+    "static/js/2.3ff20b71.chunk.js.map": "/static/js/2.3ff20b71.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.0b4d212dbfdf3d19aa9b0e102729302a.js": "/precache-manifest.0b4d212dbfdf3d19aa9b0e102729302a.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.367471c6.chunk.css.map": "/static/css/2.367471c6.chunk.css.map",
+    "static/css/main.6b48d409.chunk.css.map": "/static/css/main.6b48d409.chunk.css.map",
+    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg",
+    "static/media/paper-dashboard.scss?v=1.1.0": "/static/media/nucleo-icons.f32ed5ad.eot"
   }
 }
