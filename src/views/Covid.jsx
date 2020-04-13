@@ -1,24 +1,7 @@
-/*!
 
-=========================================================
-* Paper Dashboard React - v1.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-
-* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React, { Component, useState, useEffect, useCallback } from "react";
 // react plugin used to create charts
-import { Line, Pie } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 // reactstrap components
 import {
   Card,
@@ -30,9 +13,9 @@ import {
   Col
 } from "reactstrap";
 // core components
-// import {
-//   dashboardNASDAQChart
-// } from "variables/charts.jsx";
+import {
+  dashboardNASDAQChart
+} from "variables/charts.jsx";
 
 import axios from 'axios'
 import numeral from "numeral";
@@ -97,49 +80,49 @@ const Dashboard = () => {
     }
   }, [])
 
-  const dashboardNASDAQChart = {
-    data: {
-      labels: dateV,
-      datasets: [
-        {
-          data: newConfirmed,
-          fill: false,
-          borderColor: "#fbc658",
-          backgroundColor: "transparent",
-          pointBorderColor: "#fbc658",
-          pointRadius: 4,
-          pointHoverRadius: 4,
-          pointBorderWidth: 8
-        },
-        {
-          data: newRecovered,
-          fill: false,
-          borderColor: "#51CACF",
-          backgroundColor: "transparent",
-          pointBorderColor: "#51CACF",
-          pointRadius: 4,
-          pointHoverRadius: 4,
-          pointBorderWidth: 8
-        },
-        {
-          data: newDeaths,
-          fill: false,
-          borderColor: "#EF8157",
-          backgroundColor: "transparent",
-          pointBorderColor: "#EF8157",
-          pointRadius: 4,
-          pointHoverRadius: 4,
-          pointBorderWidth: 8
-        }
-      ]
-    },
-    options: {
-      legend: {
-        display: false,
-        position: "top"
-      }
-    }
-  };
+  // const dashboardNASDAQChart = {
+  //   data: {
+  //     labels: dateV,
+  //     datasets: [
+  //       {
+  //         data: newConfirmed,
+  //         fill: false,
+  //         borderColor: "#fbc658",
+  //         backgroundColor: "transparent",
+  //         pointBorderColor: "#fbc658",
+  //         pointRadius: 4,
+  //         pointHoverRadius: 4,
+  //         pointBorderWidth: 8
+  //       },
+  //       {
+  //         data: newRecovered,
+  //         fill: false,
+  //         borderColor: "#51CACF",
+  //         backgroundColor: "transparent",
+  //         pointBorderColor: "#51CACF",
+  //         pointRadius: 4,
+  //         pointHoverRadius: 4,
+  //         pointBorderWidth: 8
+  //       },
+  //       {
+  //         data: newDeaths,
+  //         fill: false,
+  //         borderColor: "#EF8157",
+  //         backgroundColor: "transparent",
+  //         pointBorderColor: "#EF8157",
+  //         pointRadius: 4,
+  //         pointHoverRadius: 4,
+  //         pointBorderWidth: 8
+  //       }
+  //     ]
+  //   },
+  //   options: {
+  //     legend: {
+  //       display: false,
+  //       position: "top"
+  //     }
+  //   }
+  // };
 
   return (
     <>
@@ -263,8 +246,8 @@ const Dashboard = () => {
               </CardHeader>
               <CardBody>
                 <Line
-                  data={dashboardNASDAQChart.data}
-                  options={dashboardNASDAQChart.options}
+                  data={dashboardNASDAQChart({dateV,newConfirmed,newRecovered,newDeaths}).data}
+                  options={dashboardNASDAQChart({dateV,newConfirmed,newRecovered,newDeaths}).options}
                   width={400}
                   height={150}
                   datasetKeyProvider={() => Math.random()}

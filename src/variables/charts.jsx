@@ -166,25 +166,13 @@ const dashboardEmailStatisticsChart = {
   }
 };
 
-const dashboardNASDAQChart = {
+// const dashboardNASDAQChart = (dateV,newConfirmed,newRecovered,newDeaths) =>({
+ const dashboardNASDAQChart = (props) => ({
   data: {
-    labels: [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec"
-    ],
+    labels: props.dateV,
     datasets: [
       {
-        data: [0, 14, 25, 20, 30, 40, 40, 50, 25, 30, 50, 90],
+        data: props.newConfirmed,
         fill: false,
         borderColor: "#fbc658",
         backgroundColor: "transparent",
@@ -194,7 +182,7 @@ const dashboardNASDAQChart = {
         pointBorderWidth: 8
       },
       {
-        data: [8, 5, 10, 12, 20, 27, 30, 34, 42, 45, 55, 63],
+        data: props.newRecovered,
         fill: false,
         borderColor: "#51CACF",
         backgroundColor: "transparent",
@@ -204,11 +192,11 @@ const dashboardNASDAQChart = {
         pointBorderWidth: 8
       },
       {
-        data: [50, 30, 20, 32, 45, 27, 30, 34, 42, 45, 55, 63],
+        data: props.newDeaths,
         fill: false,
-        borderColor: "red",
+        borderColor: "#EF8157",
         backgroundColor: "transparent",
-        pointBorderColor: "#51CACF",
+        pointBorderColor: "#EF8157",
         pointRadius: 4,
         pointHoverRadius: 4,
         pointBorderWidth: 8
@@ -221,7 +209,7 @@ const dashboardNASDAQChart = {
       position: "top"
     }
   }
-};
+});
 
 
 module.exports = {
