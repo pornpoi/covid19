@@ -35,6 +35,7 @@ import {
 } from "variables/charts.jsx";
 
 import axios from 'axios'
+import numeral from "numeral";
 
 // class Dashboard extends React.Component {
 
@@ -115,7 +116,7 @@ const Dashboard = () => {
                   <Col md="8" xs="7">
                     <div className="numbers">
                       <p className="card-category">ผู้ติดเชื้อรวม</p>
-                      <CardTitle tag="p">{covidData.Confirmed}</CardTitle>
+                      <CardTitle tag="p">{ numeral(covidData.Confirmed).format('0,0')}</CardTitle>
                       <p />
                     </div>
                   </Col>
@@ -141,7 +142,7 @@ const Dashboard = () => {
                   <Col md="8" xs="7">
                     <div className="numbers">
                       <p className="card-category">รักษาหายแล้ว</p>
-                      <CardTitle tag="p">{covidData.Recovered}</CardTitle>
+                      <CardTitle tag="p">{ numeral(covidData.Recovered).format('0,0')}</CardTitle>
                       <p />
                     </div>
                   </Col>
@@ -150,7 +151,7 @@ const Dashboard = () => {
               <CardFooter>
                 <hr />
                 <div className="stats">
-                  <i className="far fa-clock" />กำลังรักษาอีก : {covidData.Hospitalized}
+                  <i className="far fa-clock" />กำลังรักษาอีก : {numeral(covidData.Hospitalized).format('0,0')}
                   </div>
               </CardFooter>
             </Card>
