@@ -32,7 +32,7 @@ var routes = [
     name: "Dashboard",
     icon: "nc-icon nc-bank",
     component: Covid,
-    layout: "/admin"
+    layout: "/covid19"
   },
   // {
   //   path: "/dashboard",
