@@ -184,7 +184,7 @@ const dashboardNASDAQChart = {
     ],
     datasets: [
       {
-        data: [0, 19, 15, 20, 30, 40, 40, 50, 25, 30, 50, 70],
+        data: [0, 14, 25, 20, 30, 40, 40, 50, 25, 30, 50, 90],
         fill: false,
         borderColor: "#fbc658",
         backgroundColor: "transparent",
@@ -194,9 +194,19 @@ const dashboardNASDAQChart = {
         pointBorderWidth: 8
       },
       {
-        data: [0, 5, 10, 12, 20, 27, 30, 34, 42, 45, 55, 63],
+        data: [8, 5, 10, 12, 20, 27, 30, 34, 42, 45, 55, 63],
         fill: false,
         borderColor: "#51CACF",
+        backgroundColor: "transparent",
+        pointBorderColor: "#51CACF",
+        pointRadius: 4,
+        pointHoverRadius: 4,
+        pointBorderWidth: 8
+      },
+      {
+        data: [50, 30, 20, 32, 45, 27, 30, 34, 42, 45, 55, 63],
+        fill: false,
+        borderColor: "red",
         backgroundColor: "transparent",
         pointBorderColor: "#51CACF",
         pointRadius: 4,
