@@ -83,7 +83,7 @@ const Dashboard = () => {
                 <Row>
                   <Col md="4" xs="5">
                     <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-globe text-warning" />
+                      <i className="nc-icon nc-world-2 text-warning" />
                     </div>
                   </Col>
                   <Col md="8" xs="7">
@@ -109,7 +109,7 @@ const Dashboard = () => {
                 <Row>
                   <Col md="4" xs="5">
                     <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-money-coins text-success" />
+                      <i className="nc-icon nc-briefcase-24 text-primary" />
                     </div>
                   </Col>
                   <Col md="8" xs="7">
@@ -134,8 +134,8 @@ const Dashboard = () => {
               <CardBody>
                 <Row>
                   <Col md="4" xs="5">
-                    <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-vector text-danger" />
+                    <div className="icon-big text-center icon-success">
+                      <i className="nc-icon nc-satisfied text-success" />
                     </div>
                   </Col>
                   <Col md="8" xs="7">
@@ -161,7 +161,7 @@ const Dashboard = () => {
                 <Row>
                   <Col md="4" xs="5">
                     <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-favourite-28 text-primary" />
+                      <i className="nc-icon nc-sound-wave text-danger" />
                     </div>
                   </Col>
                   <Col md="8" xs="7">
