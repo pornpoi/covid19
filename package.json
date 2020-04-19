@@ -2,7 +2,6 @@
   "name": "paper-dashboard-react",
   "version": "1.1.0",
   "private": true,
-  "homepage": "https://pornpoi.github.io/",
   "dependencies": {
     "axios": "^0.19.2",
     "bootstrap": "4.3.1",
@@ -22,8 +21,6 @@
     "reactstrap": "8.0.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

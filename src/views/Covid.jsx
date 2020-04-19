@@ -28,6 +28,7 @@ const Dashboard = () => {
   const [newConfirmed, setNewConfirmed] = useState([]);
   const [newRecovered, setNewRecovered] = useState([]);
   const [newDeaths, setNewDeaths] = useState([]);
+  const [newHospitalized, setNewHospitalized] = useState([]);
 
   const [dateV, setDateV] = useState([]);
   const getData = async () => {
@@ -42,29 +43,37 @@ const Dashboard = () => {
       console.log(error);
     }
   }
+  
   const getAllData = async () => {
     try {
 
       const res = await axios.get('https://covid19.th-stat.com/api/open/timeline');
-      //console.log(res.data);
-      setCovidAllData(res.data);
-      const newConfirmedVal = []
-      const dateVal = []
-      const newRecoveredVal = []
-      const newDeathsVal = []
+      //ไม่เอาข้อมูล 60 รายการแรก
+      const useData = res.data.Data.slice(60, res.data.Data.count);
+      const updateState = (data,field)=>{
+        setNewConfirmed(data.map(v => v.field));
+      }
+      //setCovidAllData(res.data);
+      // const newConfirmedVal = []
+      // const dateVal = []
+      // const newRecoveredVal = []
+      // const newDeathsVal = []
+      // const NewHospitalized = useData.map(v => v.NewHospitalized)
+      // console.log(NewHospitalized)
 
-      res.data.Data.slice(60, res.data.Data.count).map((v, i) => {
-        newConfirmedVal.push(v.NewConfirmed);
-        dateVal.push(v.Date);
-        newRecoveredVal.push(v.NewRecovered);
-        newDeathsVal.push(v.NewDeaths);
-      })
+      // useData.map((v, i) => {
+      //   newConfirmedVal.push(v.NewConfirmed);
+      //   dateVal.push(v.Date);
+      //   newRecoveredVal.push(v.NewRecovered);
+      //   newDeathsVal.push(v.NewDeaths);
+      // })
 
-      setNewConfirmed(newConfirmedVal);
-      setDateV(dateVal);
-      setNewRecovered(newRecoveredVal);
-      setNewDeaths(newDeathsVal);
-      console.log(newDeathsVal);
+      setNewConfirmed(useData.map(v => v.NewConfirmed));
+      setDateV(useData.map(v => v.Date));
+      setNewRecovered(useData.map(v => v.NewRecovered));
+      setNewDeaths(useData.map(v => v.NewDeaths));
+      setNewHospitalized(useData.map(v => v.NewHospitalized));
+      //console.log(newDeathsVal);
 
     } catch (error) {
       console.log(error);
@@ -80,49 +89,6 @@ const Dashboard = () => {
     }
   }, [])
 
-  // const dashboardNASDAQChart = {
-  //   data: {
-  //     labels: dateV,
-  //     datasets: [
-  //       {
-  //         data: newConfirmed,
-  //         fill: false,
-  //         borderColor: "#fbc658",
-  //         backgroundColor: "transparent",
-  //         pointBorderColor: "#fbc658",
-  //         pointRadius: 4,
-  //         pointHoverRadius: 4,
-  //         pointBorderWidth: 8
-  //       },
-  //       {
-  //         data: newRecovered,
-  //         fill: false,
-  //         borderColor: "#51CACF",
-  //         backgroundColor: "transparent",
-  //         pointBorderColor: "#51CACF",
-  //         pointRadius: 4,
-  //         pointHoverRadius: 4,
-  //         pointBorderWidth: 8
-  //       },
-  //       {
-  //         data: newDeaths,
-  //         fill: false,
-  //         borderColor: "#EF8157",
-  //         backgroundColor: "transparent",
-  //         pointBorderColor: "#EF8157",
-  //         pointRadius: 4,
-  //         pointHoverRadius: 4,
-  //         pointBorderWidth: 8
-  //       }
-  //     ]
-  //   },
-  //   options: {
-  //     legend: {
-  //       display: false,
-  //       position: "top"
-  //     }
-  //   }
-  // };
 
   return (
     <>
@@ -175,7 +141,7 @@ const Dashboard = () => {
               <CardFooter>
                 <hr />
                 <div className="stats">
-                  <i className="far fa-calendar" /> สถิติติดเชื้อ (เพิ่ม/ลด) : {covidData.NewHospitalized}
+                  <i className="far fa-calendar" /> รักษาตัวในโรงพยาบาล (เพิ่ม/ลด) : {covidData.NewHospitalized}
                 </div>
               </CardFooter>
             </Card>
@@ -240,14 +206,12 @@ const Dashboard = () => {
               <CardHeader>
                 <CardTitle tag="h5">กราฟสถิติผู้ติดเชื้อ : ประเทศไทย</CardTitle>
                 <p className="card-category">Amount</p>
-                {
-                  console.log(covidAllData.Data)
-                }
+
               </CardHeader>
               <CardBody>
                 <Line
-                  data={dashboardNASDAQChart({dateV,newConfirmed,newRecovered,newDeaths}).data}
-                  options={dashboardNASDAQChart({dateV,newConfirmed,newRecovered,newDeaths}).options}
+                  data={dashboardNASDAQChart({dateV,newConfirmed,newRecovered,newDeaths,newHospitalized}).data}
+                  options={dashboardNASDAQChart({dateV,newConfirmed,newRecovered,newDeaths,newHospitalized}).options}
                   width={400}
                   height={150}
                   datasetKeyProvider={() => Math.random()}
@@ -258,6 +222,7 @@ const Dashboard = () => {
                   <i className="fa fa-circle text-warning" /> จำนวนผู้ติดเชื้อเพิ่ม {" "}
                   <i className="fa fa-circle text-info" /> จำนวนผู้รักษาหายแล้ว{" "}
                   <i className="fa fa-circle text-danger" /> จำนวนผู้เสียชีวิต{" "}
+                  <i className="fa fa-circle text-primary" /> รักษาตัวในโรงพยาบาล{" "}
                 </div>
                 <hr />
                 <div className="card-stats">
