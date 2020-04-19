@@ -33,7 +33,7 @@ const hist = createBrowserHistory();
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
-      <Route path="/covid19" render={props => <AdminLayout {...props} />} />
+      <Route path="" render={props => <AdminLayout {...props} />} />
       <Redirect to="/covid19/dashboard" />
     </Switch>
   </Router>,

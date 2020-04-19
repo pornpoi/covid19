@@ -28,11 +28,11 @@ import Covid from "views/Covid.jsx";
 
 var routes = [
   {
-    path: "/dashboard",
+    path: "",
     name: "Dashboard",
     icon: "nc-icon nc-bank",
     component: Covid,
-    layout: "/covid19"
+    layout: ""
   },
   // {
   //   path: "/dashboard",
