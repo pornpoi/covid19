@@ -184,9 +184,9 @@ const dashboardEmailStatisticsChart = {
       {
         data: props.newRecovered,
         fill: false,
-        borderColor: "#51CACF",
+        borderColor: "#51BCDA",
         backgroundColor: "transparent",
-        pointBorderColor: "#51CACF",
+        pointBorderColor: "#51BCDA",
         pointRadius: 4,
         pointHoverRadius: 4,
         pointBorderWidth: 8
@@ -200,7 +200,18 @@ const dashboardEmailStatisticsChart = {
         pointRadius: 4,
         pointHoverRadius: 4,
         pointBorderWidth: 8
+      },
+      {
+        data: props.newHospitalized,
+        fill: false,
+        borderColor: "#51CBCE",
+        backgroundColor: "transparent",
+        pointBorderColor: "#51CBCE",
+        pointRadius: 4,
+        pointHoverRadius: 4,
+        pointBorderWidth: 8
       }
+
     ]
   },
   options: {
